@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Interest</title>
+    <style>
+        label,input{
+            display: block;
+            margin-top: 5px;
+        }
+        
+        main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Simple Interest Calculator</h1>
+    </header>
+    <main>
+        <div id = "container">
+                <label for="principal">Principal</label>
+                <input id = "principal" type = "number" placeholder="Ex. 2000">
+                
+                <label for="rate">Rate of Interest</label>
+                <input id = "rate" type = "number" placeholder = "Ex. 3">
+                
+                <label for="time">Time Period(in yr)</label>
+                <input id = "time" type = "number" placeholder = "Ex. 2">
+                
+                <div id = "output" style = "margin-top: 10px;">
+                    Calculated SI: <span id ="calculated-value" style = "color: red" ></span>
+                </div>
+                <button style = "margin-top: 20px" type = "submit" onclick = 'clickHandler()'> Submit</button>
+        </div>
+    </main>
+    
+
+    <script>
+        const principal = document.getElementById("principal");
+        const rate = document.getElementById("rate");
+        const time = document.getElementById("time");
+        const output  = document.getElementById("calculated-value");
+      
+        function clickHandler(){
+            let p = principal.value;
+            let r = rate.value;
+            let t = time.value;
+
+            if(p== "" || r== "" || t== ""){
+                alert("Please enter the number")
+            }
+            else{    
+                let si = (p*r*t)/100;
+                output.innerHTML = si;
+            }
+        }
+    </script>
+</body>
+</html>
